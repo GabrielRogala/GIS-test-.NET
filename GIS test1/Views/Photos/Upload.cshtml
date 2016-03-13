@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+
+<div class="row">
+    <div class="col-sm-offset-2 col-sm-8">
+        <div class="well">
+            <div class="row">
+                @ViewBag.mess
+            </div>
+            @using (Html.BeginForm("Upload", "Photos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="form-group">
+                    <div class="row">
+                        <label class="col-sm-3 control-label">Nazwa pliku:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="name" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label">Nazwa katalogu:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="text" name="dir" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-3 control-label">Plik:</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" type="file" name="file" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-offset-10">
+                            <input class="btn btn-default" type="submit" value="Zapisz" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

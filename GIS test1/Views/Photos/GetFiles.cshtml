@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "GetFiles";
+}
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-6 col-xs-12">
+        <div class="well">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td>
+                            ID
+                        </td>
+                        <td>
+                            Action
+                        </td>
+                    </tr>
+                </thead>
+                @{
+                    foreach (var file in ViewBag.Files)
+                    {
+                        <tr>
+                            <td>
+                                @file.Name
+                            </td>
+                            <td>
+                                <button onclick="location.href = '@Url.Action("Delete", "Photos", new { id = @ViewBag.Dir, file = @file.Name })/'" type="button" class="btn btn-default btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
